@@ -1,0 +1,8 @@
+PLANTDOC FEATURE SHIFT (backbone features only; no logits or predictions were computed)
+ seed  images  source median  PlantDoc median  PP2020 median (manuscript)  PlantDoc beyond source p95
+   42     265          0.964            2.098                        1.85                       0.977
+  123     265          0.961            2.032                        1.85                       0.966
+ 2026     265          0.971            2.038                        1.81                       0.977
+
+Interpretation is fixed in advance: PlantDoc is a field set; the distance is reported for information
+and to place PlantDoc relative to the source (about 1.0) and PP2020 (about 1.8).
