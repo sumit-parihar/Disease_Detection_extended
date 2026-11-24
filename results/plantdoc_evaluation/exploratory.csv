@@ -1,0 +1,28 @@
+seed,subset,method,auroc_error
+42,"predicted scab (192 images, 113 errors)",B1 MSP,0.6443374033829955
+42,"predicted scab (192 images, 113 errors)",B2 Entropy,0.6480340539935028
+42,"predicted scab (192 images, 113 errors)",B3 Margin,0.6423210485045368
+42,"predicted scab (192 images, 113 errors)",B4 Temp-scaled MSP,0.6414248907807775
+42,"predicted scab (192 images, 113 errors)",B5 Logits-only head,0.6506105074493111
+42,"predicted scab (192 images, 113 errors)",A1 Features-only head,0.6050184832530525
+42,"predicted scab (192 images, 113 errors)",P1 Proposed head,0.6311190769575444
+42,"predicted scab (192 images, 113 errors)",E Energy (pre-registered),0.6599081438333146
+42,all images,centre distance,0.6117714285714286
+123,"predicted scab (183 images, 107 errors)",B1 MSP,0.6626906050172159
+123,"predicted scab (183 images, 107 errors)",B2 Entropy,0.6652729955730448
+123,"predicted scab (183 images, 107 errors)",B3 Margin,0.6630595179537628
+123,"predicted scab (183 images, 107 errors)",B4 Temp-scaled MSP,0.6631824889326118
+123,"predicted scab (183 images, 107 errors)",B5 Logits-only head,0.6420314805705853
+123,"predicted scab (183 images, 107 errors)",A1 Features-only head,0.5778406296114118
+123,"predicted scab (183 images, 107 errors)",P1 Proposed head,0.5928430890309887
+123,"predicted scab (183 images, 107 errors)",E Energy (pre-registered),0.689867191342843
+123,all images,centre distance,0.6031428571428572
+2026,"predicted scab (172 images, 99 errors)",B1 MSP,0.6630690466306904
+2026,"predicted scab (172 images, 99 errors)",B2 Entropy,0.6647294866472948
+2026,"predicted scab (172 images, 99 errors)",B3 Margin,0.6630690466306904
+2026,"predicted scab (172 images, 99 errors)",B4 Temp-scaled MSP,0.6614086066140861
+2026,"predicted scab (172 images, 99 errors)",B5 Logits-only head,0.6293067662930676
+2026,"predicted scab (172 images, 99 errors)",A1 Features-only head,0.5699460356994603
+2026,"predicted scab (172 images, 99 errors)",P1 Proposed head,0.5746506157465061
+2026,"predicted scab (172 images, 99 errors)",E Energy (pre-registered),0.6704026567040265
+2026,all images,centre distance,0.6032180760013693
