@@ -1,0 +1,2 @@
+# keep bytes identical on every system so recorded SHA-256 hashes stay valid
+* -text
