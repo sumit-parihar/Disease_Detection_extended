@@ -1,0 +1,17 @@
+PLANTDOC ACQUISITION RECORD
+repository      : https://github.com/pratikkayal/PlantDoc-Dataset.git
+commit          : 5467f6012d78d1c446145d5f582da6096f852ae8
+commit date     : 2021-05-02T11:01:07+05:30
+downloaded (UTC): 2026-11-24T18:11:01+00:00
+licence         : CC BY 4.0 (LICENSE.txt in the original repository)
+folders taken   : train/Apple leaf, train/Apple Scab Leaf, train/Apple rust leaf, test/Apple leaf, test/Apple Scab Leaf, test/Apple rust leaf
+method          : sparse blobless clone; bytes read with 'git cat-file' and checked against the blob ids
+files           : 273
+record SHA-256  : 076ab20ed3b29dd6bfe3777458186616245e3db2c724deced170423074f29d26  (plantdoc_acquisition.csv)
+
+counts by original split and label:
+label           healthy  rust  scab
+original_split                     
+test                  9    10    10
+train                82    79    83
+totals: {'scab': 93, 'healthy': 91, 'rust': 89}
