@@ -1,0 +1,16 @@
+dataset,method,mean_delta_aurc,ci_low,ci_high,note
+PP2020,B1 MSP,0.0,0.0,0.0,original one-time test
+PP2020,B2 Entropy,-0.0049680200289735,-0.0057924587056282,-0.0042338688147444,original one-time test
+PP2020,B3 Margin,0.0080882625201751,0.006439169551931,0.0096343391357411,original one-time test
+PP2020,B4 Temp-scaled MSP,0.013894473649515,0.0114370996004833,0.0161877605490167,original one-time test
+PP2020,B5 Logits-only head,-0.0992458850106221,-0.1197068936145379,-0.0775414347929187,original one-time test
+PP2020,A1 Features-only head,0.0492423924695174,0.0193977995803918,0.0788527063647107,original one-time test
+PP2020,P1 Proposed head,0.0289786177224955,-0.0017523586142239,0.0581544815549132,original one-time test
+PlantDoc,B1 MSP,0.0,0.0,0.0,pre-registered one-time test
+PlantDoc,B2 Entropy,0.0001711029479382,-0.0033126089875899,0.0036708191349799,pre-registered one-time test
+PlantDoc,B3 Margin,0.000325348339073,-0.0020334464341884,0.0028786960807621,pre-registered one-time test
+PlantDoc,B4 Temp-scaled MSP,0.0006686239508087,-0.0023827979102488,0.0040345508808818,pre-registered one-time test
+PlantDoc,B5 Logits-only head,0.0268616967083135,-0.0341768497114581,0.0852704818495051,pre-registered one-time test
+PlantDoc,A1 Features-only head,0.0902704699145662,0.0194273300945017,0.156211978887574,pre-registered one-time test
+PlantDoc,P1 Proposed head,0.0767520742200548,0.0056373549053711,0.1447756729744304,pre-registered one-time test
+PlantDoc,E Energy,-0.00306491774336,-0.0434380596091338,0.0369138966865122,pre-registered one-time test
