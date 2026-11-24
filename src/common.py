@@ -53,7 +53,9 @@ def sha256_file(path, chunk=1 << 20):
 
 
 def use_frozen_code():
-    """Make the original project's src/ importable (read-only use)."""
+    """Make the original project's src/ importable (read-only use).
+    Bytecode caching is switched off so nothing is written into the original folder."""
+    sys.dont_write_bytecode = True
     if str(FROZEN_SRC) not in sys.path:
         sys.path.insert(0, str(FROZEN_SRC))
 

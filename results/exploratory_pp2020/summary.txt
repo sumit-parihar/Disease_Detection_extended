@@ -1,0 +1,90 @@
+EXPLORATORY ANALYSES ON THE ORIGINAL PP2020 OUTPUTS (not confirmatory; hypothesis generation only)
+====================================================================================================
+
+PART 1  Shortcut check: B5 inside the predicted-scab group
+ seed              subset  images  errors                       method  auroc_error   aurc  delta_aurc_vs_msp  ci_low  ci_high
+   42          all images    1730    1121 Shortcut: predicted scab = 1       0.5140 0.6184                NaN     NaN      NaN
+   42 predicted scab only    1713    1121                       B1 MSP       0.6645 0.5317             0.0000  0.0000   0.0000
+   42 predicted scab only    1713    1121                   B2 Entropy       0.6704 0.5273            -0.0044 -0.0053  -0.0036
+   42 predicted scab only    1713    1121                    B3 Margin       0.6563 0.5399             0.0083  0.0059   0.0102
+   42 predicted scab only    1713    1121           B4 Temp-scaled MSP       0.6494 0.5462             0.0146  0.0114   0.0172
+   42 predicted scab only    1713    1121          B5 Logits-only head       0.7507 0.4519            -0.0798 -0.0984  -0.0609
+   42 predicted scab only    1713    1121        A1 Features-only head       0.5043 0.6498             0.1181  0.0883   0.1483
+   42 predicted scab only    1713    1121             P1 Proposed head       0.5330 0.6226             0.0909  0.0602   0.1216
+  123          all images    1730    1108 Shortcut: predicted scab = 1       0.5231 0.5982                NaN     NaN      NaN
+  123 predicted scab only    1695    1104                       B1 MSP       0.6574 0.5331             0.0000  0.0000   0.0000
+  123 predicted scab only    1695    1104                   B2 Entropy       0.6648 0.5277            -0.0054 -0.0065  -0.0045
+  123 predicted scab only    1695    1104                    B3 Margin       0.6477 0.5416             0.0084  0.0068   0.0100
+  123 predicted scab only    1695    1104           B4 Temp-scaled MSP       0.6417 0.5473             0.0142  0.0118   0.0166
+  123 predicted scab only    1695    1104          B5 Logits-only head       0.7861 0.4254            -0.1077 -0.1309  -0.0833
+  123 predicted scab only    1695    1104        A1 Features-only head       0.6168 0.5472             0.0140 -0.0164   0.0460
+  123 predicted scab only    1695    1104             P1 Proposed head       0.6186 0.5462             0.0131 -0.0181   0.0449
+ 2026          all images    1730    1107 Shortcut: predicted scab = 1       0.5244 0.5943                NaN     NaN      NaN
+ 2026 predicted scab only    1698    1106                       B1 MSP       0.6651 0.5276             0.0000  0.0000   0.0000
+ 2026 predicted scab only    1698    1106                   B2 Entropy       0.6722 0.5224            -0.0052 -0.0061  -0.0043
+ 2026 predicted scab only    1698    1106                    B3 Margin       0.6563 0.5356             0.0080  0.0064   0.0097
+ 2026 predicted scab only    1698    1106           B4 Temp-scaled MSP       0.6504 0.5413             0.0137  0.0112   0.0161
+ 2026 predicted scab only    1698    1106          B5 Logits-only head       0.7822 0.4275            -0.1001 -0.1218  -0.0774
+ 2026 predicted scab only    1698    1106        A1 Features-only head       0.5938 0.5691             0.0415  0.0110   0.0723
+ 2026 predicted scab only    1698    1106             P1 Proposed head       0.6358 0.5365             0.0089 -0.0214   0.0387
+
+PART 2  What B5 learned (source reliability views decide)
+Mean absolute sensitivity of B5 to each standardised logit:
+ seed  mean |dB5/d logit_healthy|  mean |dB5/d logit_scab|  mean |dB5/d logit_rust|
+   42                      2.3079                   2.8998                   0.5839
+  123                      2.3500                   2.6050                   0.9178
+ 2026                      2.2821                   2.4706                   0.3664
+
+Seed-mean Spearman correlation with B5 on source views (selection criterion):
+candidate
+C0 MSP (reference)                            0.8271
+C1 negative logit margin (top - runner-up)    0.8262
+C2 negative max logit                         0.8133
+C3 energy (negative log-sum-exp)              0.8118
+C4 runner-up logit                            0.6238
+C5 lowest logit                               0.2914
+
+SELECTED RULE (highest correlation with B5 on source, excluding the MSP reference): C1 negative logit margin (top - runner-up)
+
+Logit magnitude and margin, source vs PP2020 (mechanism check):
+ seed                  group  images  median log-sum-exp  median max logit  median margin (top - runner-up)
+   42 S-calibration (source)     254               3.623             3.620                            5.852
+   42         PP2020 correct     609               3.828             3.822                            4.927
+   42           PP2020 wrong    1121               3.052             3.020                            4.111
+  123 S-calibration (source)     254               4.589             4.588                            6.748
+  123         PP2020 correct     622               3.388             3.370                            4.806
+  123           PP2020 wrong    1108               2.713             2.689                            4.100
+ 2026 S-calibration (source)     254               4.092             4.089                            6.385
+ 2026         PP2020 correct     623               3.226             3.216                            4.569
+ 2026           PP2020 wrong    1107               2.537             2.502                            3.808
+
+All candidates on PP2020 (reported, NOT used for selection):
+ seed                                  candidate  spearman_with_B5_target   aurc  delta_aurc_vs_msp  ci_low  ci_high  auroc_error  auroc_error_within_predicted_scab
+   42                         C0 MSP (reference)                   0.7373 0.5314             0.0000  0.0000   0.0000       0.6497                             0.6645
+   42 C1 negative logit margin (top - runner-up)                   0.6783 0.5495             0.0182  0.0140   0.0218       0.6315                             0.6459
+   42                      C2 negative max logit                   0.8995 0.4799            -0.0515 -0.0642  -0.0389       0.6945                             0.7099
+   42           C3 energy (negative log-sum-exp)                   0.9036 0.4798            -0.0516 -0.0645  -0.0388       0.6945                             0.7092
+   42                         C4 runner-up logit                   0.1684 0.6453             0.1139  0.0958   0.1325       0.4962                             0.5059
+   42                            C5 lowest logit                   0.7450 0.4804            -0.0509 -0.0789  -0.0227       0.7059                             0.7082
+  123                         C0 MSP (reference)                   0.4699 0.5335             0.0000  0.0000   0.0000       0.6307                             0.6574
+  123 C1 negative logit margin (top - runner-up)                   0.4035 0.5528             0.0193  0.0154   0.0233       0.6094                             0.6351
+  123                      C2 negative max logit                   0.7248 0.4612            -0.0724 -0.0855  -0.0595       0.7045                             0.7288
+  123           C3 energy (negative log-sum-exp)                   0.7405 0.4594            -0.0741 -0.0874  -0.0609       0.7090                             0.7293
+  123                         C4 runner-up logit                  -0.0195 0.6501             0.1165  0.1002   0.1325       0.4734                             0.4928
+  123                            C5 lowest logit                   0.8767 0.4349            -0.0987 -0.1255  -0.0695       0.7540                             0.7575
+ 2026                         C0 MSP (reference)                   0.5700 0.5279             0.0000  0.0000   0.0000       0.6372                             0.6651
+ 2026 C1 negative logit margin (top - runner-up)                   0.5082 0.5465             0.0186  0.0151   0.0223       0.6180                             0.6449
+ 2026                      C2 negative max logit                   0.7224 0.4658            -0.0621 -0.0741  -0.0501       0.6983                             0.7242
+ 2026           C3 energy (negative log-sum-exp)                   0.7291 0.4641            -0.0637 -0.0760  -0.0516       0.7022                             0.7252
+ 2026                         C4 runner-up logit                   0.0853 0.6518             0.1239  0.1062   0.1416       0.4763                             0.4953
+ 2026                            C5 lowest logit                   0.8109 0.4558            -0.0721 -0.0999  -0.0428       0.7222                             0.7247
+
+PART 3  Batch alarm (thresholds from source only; 99th percentile of reliability-training batches)
+ seed  batch_size  S1 threshold (share beyond source p95)  S1 false alarms, held-out source (rel-val originals)  S1 alarm rate, PP2020 batches  S2 threshold (TV distance of predicted shares)  S2 false alarms, held-out source (rel-val originals)  S2 false alarms, S-test  S2 alarm rate, PP2020 batches share beyond p95: rel-val / PP2020
+   42          20                                    0.20                                                   0.0                            1.0                                          0.2996                                                0.0010                   0.0085                            1.0                      0.039 / 0.999
+   42          50                                    0.14                                                   0.0                            1.0                                          0.1696                                                0.0000                   0.0110                            1.0                      0.039 / 0.999
+  123          20                                    0.20                                                   0.0                            1.0                                          0.2559                                                0.0005                   0.0120                            1.0                      0.039 / 0.999
+  123          50                                    0.14                                                   0.0                            1.0                                          0.1759                                                0.0000                   0.0065                            1.0                      0.039 / 0.999
+ 2026          20                                    0.20                                                   0.0                            1.0                                          0.2559                                                0.0015                   0.0115                            1.0                      0.039 / 0.999
+ 2026          50                                    0.14                                                   0.0                            1.0                                          0.1559                                                0.0000                   0.0140                            1.0                      0.039 / 0.999
+

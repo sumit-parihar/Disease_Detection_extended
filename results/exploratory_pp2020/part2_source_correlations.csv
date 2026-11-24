@@ -1,0 +1,19 @@
+seed,candidate,spearman_with_B5_source_views
+42,C0 MSP (reference),0.8624118102864262
+42,C1 negative logit margin (top - runner-up),0.860866518733012
+42,C2 negative max logit,0.8165257753045673
+42,C3 energy (negative log-sum-exp),0.8135580023364145
+42,C4 runner-up logit,0.7355401276229804
+42,C5 lowest logit,0.3819294620948249
+123,C0 MSP (reference),0.8200050244557832
+123,C1 negative logit margin (top - runner-up),0.8174511272188576
+123,C2 negative max logit,0.8378839395459018
+123,C3 energy (negative log-sum-exp),0.837426925019722
+123,C4 runner-up logit,0.5353942692471916
+123,C5 lowest logit,0.2538594026389941
+2026,C0 MSP (reference),0.7989728680753659
+2026,C1 negative logit margin (top - runner-up),0.8004265498146043
+2026,C2 negative max logit,0.7853511279188636
+2026,C3 energy (negative log-sum-exp),0.7844201421150894
+2026,C4 runner-up logit,0.6004937314775953
+2026,C5 lowest logit,0.23829914823307732

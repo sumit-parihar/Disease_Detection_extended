@@ -1,0 +1,7 @@
+seed,batch_size,S1 threshold (share beyond source p95),"S1 false alarms, held-out source (rel-val originals)","S1 alarm rate, PP2020 batches",S2 threshold (TV distance of predicted shares),"S2 false alarms, held-out source (rel-val originals)","S2 false alarms, S-test","S2 alarm rate, PP2020 batches",share beyond p95: rel-val / PP2020
+42,20,0.2,0.0,1.0,0.2996062992125984,0.001,0.0085,1.0,0.039 / 0.999
+42,50,0.14,0.0,1.0,0.1696062992125984,0.0,0.011,1.0,0.039 / 0.999
+123,20,0.2,0.0,1.0,0.2559055118110236,0.0005,0.012,1.0,0.039 / 0.999
+123,50,0.14,0.0,1.0,0.17590551181102357,0.0,0.0065,1.0,0.039 / 0.999
+2026,20,0.2,0.0,1.0,0.2559055118110236,0.0015,0.0115,1.0,0.039 / 0.999
+2026,50,0.14,0.0,1.0,0.1559055118110236,0.0,0.014,1.0,0.039 / 0.999
