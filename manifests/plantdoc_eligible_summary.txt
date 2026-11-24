@@ -1,0 +1,9 @@
+PLANTDOC ELIGIBLE SET
+audited images                 : 273  {'scab': 93, 'healthy': 91, 'rust': 89}
+removed, by rule               : {'visual label check': 8}
+removed, by class              : {'healthy': 1, 'rust': 5, 'scab': 2}
+eligible images                : 265  {'scab': 91, 'healthy': 90, 'rust': 84}
+size rule (>= 60 per class)       : passed
+clusters                       : 262 (3 clusters of size > 1 containing 6 images)
+label-free manifest SHA-256    : 66c43f19417c3fa39588ef88b13f1988d8a93e3e06d17931991615ea23ffe149
+staged names follow SHA-256 order; every copy verified byte for byte
