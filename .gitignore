@@ -1,5 +1,8 @@
 # raw and staged images are never committed (licence and size)
 data/
+# contact sheets (contain PP2020/PlantVillage thumbnails; PP2020 may not be redistributed)
+manifests/plantdoc_review/
+manifests/plantdoc_label_sheets/
 # large arrays
 *.npz
 *.npy

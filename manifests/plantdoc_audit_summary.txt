@@ -1,0 +1,24 @@
+PLANTDOC AUDIT
+images audited      : 273   decoded: 273   failed: 0
+failed files        : []
+class counts        : {'scab': 93, 'healthy': 91, 'rust': 89}  (published folder counts 91/93/89)
+colour modes        : {'RGB': 271, 'L': 1, 'CMYK': 1}
+file formats        : {'JPEG': 273}
+EXIF orientation    : {nan: 206, 1.0: 64, 6.0: 3}
+shorter side (px)   : min 85, median 576, max 4000
+longer side (px)    : min 115, median 800, max 5312
+manifest SHA-256    : 385ee847b41ee0c9aa616d1e101bddf6228a8a64b69f972a2cf34b1d0ed9300d
+original manifest   : d0aabb245d6993e840d43ab2cad4f798a3d3360825a7b53e8a69c420b7268b73 (verified, read only)
+
+exact copies inside PlantDoc          : 0 groups
+exact copies of PlantVillage / PP2020 : 0 images
+pHash pairs 0..10 bits (to review)         : 18
+scope           plantdoc_vs_source  within_plantdoc
+phash_distance                                     
+0                                0                1
+6                                0                2
+8                                1                1
+10                              11                2
+
+pHash is computed as in the original audit; consistency check is the pixel-difference hint
+(SIFT matching was not available in this environment).
